@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Assignment</title>
+	<!-- STYLE SHEET -->
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<!-- FONT FAMILY -->
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+	<!-- FONT AWESOME -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- JQUERY -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+	<!-- MAIN CONTAINER -->
+	<div class="set-main-container">
+		<!-- HEADER -->
+		<header class="set-header">
+			<div class="set-header-img">
+				<img src="assets/images/IMG.jpg" height="320px">
+			</div>
+			<div class="set-header-content">
+				<h1>Ayush Sevak</h1>
+				<small>Web Developer, Software Engineer</small>
+				<div class="set-header-btn">
+					<a href="assets/images/resume.pdf" target="_blank" class="btn-white" download><i class="fa fa-download"></i> Resume</a>
+					&nbsp;&nbsp;
+					<a href="#contact" class="btn-black">Contact Me</a>
+					<onsubmit="return formValidate()"
+				</div>
+			</div>
+		</header>
+		<!-- INFO GRAPHIC SECTION -->
+		<section class="set-main-info">
+			<div class="info-left">
+				<h2>About Me and Academic Honesty</h2>
+				<p>
+					I declare that my assessment is wholly my own work in accordance with Seneca Academic Policy.
+					No part of this assessment has been copied manually or electronically from any other source
+					(including web sites) except for the information supplied by the WEB222 instructors and / or
+					made available in this assessment for my use. I also declare that no part of this assignment has
+					been distributed to other students.
+				</p>
+				<span><strong>Date:</strong>&nbsp;&nbsp;August 19,2022</span>
+			</div>
+			<div class="info-right">
+				<h2>Basic Information</h2>
+				<table width="100%">
+					<tr>
+						<th>AGE:</th>
+						<td>20</td>
+					</tr>
+					<tr>
+						<th>EMAIL:</th>
+						<td>asevak@myseneca.ca</td>
+					</tr>
+					<tr>
+						<th>LANGUAGE:</th>
+						<td>English, Hindi, Gujarati</td>
+					</tr>
+					<tr>
+						<th>PHONE:</th>
+						<td>+1 437-256-9994</td>
+					</tr>
+					<tr>
+						<th>STUDENT ID:</th>
+						<td>156806218</td>
+					</tr>
+					<tr>
+						<th>INSTRUCTOR & CLASS:</th>
+						<td>Prof. Harry Scanlan (ZFF)</td>
+					</tr>
+				</table>
+			</div>
+		</section>
+		<!-- EDUCATION SECTION -->
+		<section class="set-main-education">
+			<div class="edu-left">
+				<span>2022-2024(completed)</span>
+				<h5>Diploma Program</h5>
+			</div>
+			<div class="edu-right">
+				<h5>Diploma Program</h5>
+				<h6>SENECA COLLEGE</h6>
+				<p class="margin-top">Under Supervision of Harry Scanlan</p>
+			</div>
+		</section>
+		<section class="set-main-education">
+			<div class="edu-left">
+				<span>2018-2020(Completed)</span>
+				<h5>High School</h5>
+			</div>
+			<div class="edu-right">
+				<h5>Higher Secondary School</h5>
+				<h6>Knowledge High School</h6>
+				<p class="margin-top">Under Supervision of Brijesh Christian</p>
+			</div>
+		</section>
+		<!-- CONTACT FORM -->
+		<section id="contact" class="set-contact-form">
+			<h1>Contact Us</h1>
+			<form action="https://httpbin.org/post" method="POST">
+				<onsubmit="return formValidate()"></onsubmit>
+				<label for="fname">Name</label>
+				<input type="text" id="fname" name="name" placeholder="Your name.." required>
+
+				<label for="email">Email</label>
+				<input type="email" id="email" name="email" placeholder="Your email.." required>
+
+				<label for="subject">Subject</label>
+				<textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+				<label for="browser">City</label>
+				<input class="set-datalist" list="browsers" name="browser" id="browser" required>
+				<datalist id="browsers">
+					<option value="Vancouver">
+					<option value="Ontario">
+					<option value="Ottawa">
+					<option value="Quebec ">
+					<option value="Montreal">
+				</datalist>
+
+				<label for="code">Postal Code</label>
+				<input type="text" id="code" name="postal_code" placeholder="Postal Code.." required>
+
+
+				<input type="radio" name="question" value="question" onclick="hideShowJacks('N');">
+				<label for="browser">Question</label>
+				<input type="radio" name="question" value="comment" onclick="hideShowJacks('N');">
+				<label for="browser">Comment</label>
+				<input type="radio" name="question" value="hiring" onclick="hideShowJacks('hiring');">
+				<label for="browser">Hiring</label>
+				<input type="number" id="area" placeholder="Hourly Rate"><br><br>
+
+				<input type="submit" value="Submit">
+			</form>
+		</section>
+	</div><br><br><br>
+	<script>
+		function formValidate() {
+			let name = document.forms["contactForm"]["fname"].value;
+			let email = document.forms["contactForm"]["email"].value;
+			let city = document.forms["contactForm"]["browser"].value;
+			let address = document.forms["contactForm"]["caddress"].value;
+			let postal = document.forms["contactForm"]["code"].value;
+			let message = document.forms["contactForm"]["cmessage"].value;
+			let rate = document.forms["contactForm"]["area"].value;
+		}
+		function hideShowJacks(val) {
+		  	if (val == "hiring") {
+			    $("#area").show();
+			} else {
+			    $("#area").hide();
+			}
+		}
+	</script>
+</body>
+</html>
